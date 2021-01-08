@@ -15,9 +15,8 @@ public class RSA {
     public static KeyPair generateKeyPair() throws Exception {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
         generator.initialize(1024, new SecureRandom());
-        KeyPair pair = generator.generateKeyPair();
 
-        return pair;
+        return generator.generateKeyPair();
     }
 
     public static String encrypt(String plainText, PublicKey publicKey) throws Exception {
@@ -32,9 +31,9 @@ public class RSA {
     public static String decrypt(String cipherText, PrivateKey privateKey) throws Exception {
         byte[] bytes = Base64.getDecoder().decode(cipherText);
 
-        Cipher decriptCipher = Cipher.getInstance("RSA");
-        decriptCipher.init(Cipher.DECRYPT_MODE, privateKey);
+        Cipher decryptCipher = Cipher.getInstance("RSA");
+        decryptCipher.init(Cipher.DECRYPT_MODE, privateKey);
 
-        return new String(decriptCipher.doFinal(bytes), UTF_8);
+        return new String(decryptCipher.doFinal(bytes), UTF_8);
     }
 }
