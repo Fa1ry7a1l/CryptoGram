@@ -3,55 +3,45 @@ package com.sushko.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
-import java.security.KeyPair;
-import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.stream.IntStream;
 
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
+public class MainActivity extends AppCompatActivity {
 
-import static com.sushko.myapplication.RSA.generateKeyPair;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    EditText editText1;
-    EditText editText2;
-    EditText editText3;
+    private static final String TITLE = "person_name";
+    private static final String MESSAGE = "last_message";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editText1 = findViewById(R.id.text1);
-        editText2 = findViewById(R.id.text2);
-        editText3 = findViewById(R.id.text3);
-        Button button = findViewById(R.id.Knoponika);
-        button.setOnClickListener(this);
+
+        final ListView lv = findViewById(R.id.listView);
+        fillList(lv);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.Knoponika:
-                KeyPair keyPair = null;
-                try {
-                    keyPair = generateKeyPair();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+    private void fillList(ListView listView) {
+        ArrayList<HashMap<String, Object>> chatList = new ArrayList<>();
+        IntStream.range(1, 20).forEach(i -> {
+            addItem(chatList, "Person " + i, "Last message in this chat");
+        });
 
-                try {
-                    editText2.setText(RSA.encrypt(editText1.getText().toString(), keyPair.getPublic()));
+        SimpleAdapter adapter = new SimpleAdapter(this, chatList,
+                R.layout.chat_list_item, new String[]{TITLE, MESSAGE},
+                new int[]{R.id.name, R.id.message});
 
-                    editText3.setText(RSA.decrypt(editText2.getText().toString(), keyPair.getPrivate()));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-        }
+        listView.setAdapter(adapter);
+    }
+
+    private void addItem(ArrayList<HashMap<String, Object>> chatList, String title, String message) {
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put(TITLE, title);
+        hashMap.put(MESSAGE, message);
+        chatList.add(hashMap);
     }
 }
