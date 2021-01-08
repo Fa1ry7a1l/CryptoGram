@@ -8,10 +8,10 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface Client {
-    @POST("/")
+    @POST(value = "/get/")
     Call<String> predict1(@Query("userto") Long userTo, @Query("userfrom") Long userFrom, @Query("message") String message);
 
-    @GET("/")
+    @GET(value = "/post/")
     Call<ArrayList<Message>> predict2(@Query("userto") Long userTo);
 
 }

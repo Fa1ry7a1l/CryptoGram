@@ -13,6 +13,10 @@
         android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".MainWindow1"
+            android:label="@string/title_activity_main_window1"
+            android:theme="@style/Theme.MyApplication.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
