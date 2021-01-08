@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Chats</string>
+    <string name="contanct1_name">Some person</string>
+    <string name="last_message">Last message in this chat...</string>
+    <string-array name="names">
+        <item>Person 1</item>
+        <item>Person 2</item>
+        <item>Person 3</item>
+        <item>Person 4</item>
+        <item>Person 5</item>
+        <item>Person 6</item>
+        <item>Person 7</item>
+        <item>Person 8</item>
+    </string-array>
 </resources>
