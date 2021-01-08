@@ -1,15 +1,6 @@
 <resources>
     <string name="app_name">Chats</string>
-    <string name="contanct1_name">Some person</string>
-    <string name="last_message">Last message in this chat...</string>
-    <string-array name="names">
-        <item>Person 1</item>
-        <item>Person 2</item>
-        <item>Person 3</item>
-        <item>Person 4</item>
-        <item>Person 5</item>
-        <item>Person 6</item>
-        <item>Person 7</item>
-        <item>Person 8</item>
-    </string-array>
+    <string name="chat_title">Person</string>
+    <string name="send_button_desc">Send</string>
+    <string name="input_in_chat">Write a message…</string>
 </resources>
