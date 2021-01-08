@@ -2,6 +2,11 @@
     <string name="app_name">Chats</string>
     <string name="contanct1_name">Some person</string>
     <string name="last_message">Last message in this chat...</string>
+    <string name="title_activity_main_window1">a</string>
+    <string name="action_settings">b</string>
+    <string name="menu_home">c</string>
+    <string name="menu_gallery">d</string>
+    <string name="menu_slideshow">e</string>
     <string-array name="names">
         <item>Person 1</item>
         <item>Person 2</item>
@@ -12,4 +17,6 @@
         <item>Person 7</item>
         <item>Person 8</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -5,15 +5,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_group"
+            android:id="@+id/blankFragment"
             android:icon="@drawable/add"
             android:title="Создать группу" />
         <item
-            android:id="@+id/nav_contacts"
+            android:id="@+id/blank_fragment2"
             android:icon="@drawable/contact"
             android:title="Контакты" />
         <item
-            android:id="@+id/nav_fav"
+            android:id="@+id/blankFragment3"
             android:icon="@drawable/heart"
             android:title="Избранные" />
         <item
