@@ -3,12 +3,15 @@ package com.sushko.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.IntStream;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         final ListView lv = findViewById(R.id.listView);
         fillList(lv);
+
+        ServerStarter.execute();
     }
 
     private void fillList(ListView listView) {
@@ -43,5 +48,18 @@ public class MainActivity extends AppCompatActivity {
         hashMap.put(TITLE, title);
         hashMap.put(MESSAGE, message);
         chatList.add(hashMap);
+    }
+
+    static class ServerStarter {
+
+        static ExecutorService executorServer = Executors.newFixedThreadPool(1);
+
+        static void execute() {
+            Log.d("Server", "Starting server");
+            Server server = new Server();
+            executorServer.execute(server);
+
+
+        }
     }
 }
