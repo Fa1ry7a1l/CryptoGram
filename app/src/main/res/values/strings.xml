@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="Chat_1">Тут должно быть название, но его спёрли(</string>
-    <string name="title_activity_main_window1">MainWindow1</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="app_name">Chats</string>
+    <string name="contanct1_name">Some person</string>
+    <string name="last_message">Last message in this chat...</string>
+    <string-array name="names">
+        <item>Person 1</item>
+        <item>Person 2</item>
+        <item>Person 3</item>
+        <item>Person 4</item>
+        <item>Person 5</item>
+        <item>Person 6</item>
+        <item>Person 7</item>
+        <item>Person 8</item>
+    </string-array>
 </resources>
